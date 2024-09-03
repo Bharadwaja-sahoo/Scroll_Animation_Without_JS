@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+#first{
+    width: 100%;
+    height: 100vh;
+    background-color: #030303;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 25px;
+}
+#block{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+    row-gap: 5px;
+}
+#block .scale{
+    width: 500px;
+    height: 500px;
+    background-color: red;
+    animation: scale linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover;
+}
+#block .side:nth-child(odd){
+    width: 500px;
+    height: 500px;
+    background-color: red;
+    animation: odd linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover;
+}
+#block .side:nth-child(even){
+    width: 500px;
+    height: 500px;
+    background-color: red;
+    animation: even linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover;
+}
+@keyframes scale {
+    from{
+        opacity: 0;
+        scale: 0;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+@keyframes even {
+    from{
+        opacity: 0;
+        transform: translate(200px,0px);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0px,0px);
+    }
+}
+@keyframes odd {
+    from{
+        opacity: 0;
+        transform: translate(-200px,0px);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0px,0px);
+    }
+}
